@@ -10,15 +10,14 @@ function App() {
   const [qrCode, setQrCode] = useState(localStorage.getItem("qrCode"));
   const [upiLink, setUpiLink] = useState("");
   const [payments, setPayments] = useState([]);
-  const [count, setcount] = useState(localStorage.getItem("count"))
+  const [count, setcount] = useState(localStorage.getItem("count"));
 
   let timer;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.post(`${config.ADMIN_URL}payments`, {
-    amount,
-    upiId,
+      amount,
+      upiId,
     }
     );
     localStorage.setItem("qrCode", res.data.qrCode)
@@ -26,17 +25,17 @@ function App() {
     setUpiLink(res.data.upiLink);
     fetchPayments();
     setAmount("")
-    localStorage.setItem("count", 30)
+    localStorage.setItem("count", 60)
     setcount(localStorage.getItem("count"))
     DecreaseCount()
   };
+
   const fetchPayments = async () => {
     const res = await axios.get(`${config.ADMIN_URL}transaction`);
     setPayments(res.data);
   };
 
   useEffect(() => {
-
     fetchPayments();
     if (localStorage.getItem("count") >= 1) {
       clearInterval(timer)
@@ -49,7 +48,6 @@ function App() {
 
   const DecreaseCount = async () => {
     timer = setInterval(() => {
-
       setcount((prevCount) => {
         if (prevCount <= 1) {
           localStorage.removeItem("qrCode")
@@ -60,14 +58,11 @@ function App() {
         } else {
           localStorage.setItem("count", prevCount - 1)
           return prevCount - 1
-
         }
       })
-
     }, 1000);
 
   }
-
   const handlePayNow = () => {
     window.location.href = upiLink;
   };
@@ -77,6 +72,7 @@ function App() {
       <h2>UPI Payment</h2>
 
       <form onSubmit={handleSubmit}>
+
         <input
           type="number"
           placeholder="Enter amount"
@@ -88,14 +84,16 @@ function App() {
         />
         <input
           type="text"
-          placeholder="Optional: Enter UPI ID"
+          placeholder="Optional:Enter UPI ID"
           value={upiId}
           onChange={(e) =>
             setUpiId(e.target.value)
           }
+
         />
-        <button type="submit">Generate QR</button>
+        <button type="submit" >Generate QR</button>
       </form>
+
       {
         qrCode && (
           <div className="qr-section">
@@ -109,8 +107,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={handlePayNow}
-              >
-                Pay Now
+              > Pay Now
               </a>
             </p>
           </div>
