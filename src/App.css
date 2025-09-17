@@ -139,3 +139,152 @@ ul li:hover {
     font-size: 14px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Container and background */
+.advanced-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 1rem;
+}
+
+/* Login card */
+.advanced-login-form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.advanced-login-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Input fields */
+.advanced-login-form input[type='email'],
+.advanced-login-form input[type='password'],
+.advanced-login-form input[type='text'] {
+  width: 100%;
+  padding: 0.85rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.3s ease;
+}
+
+.advanced-login-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4);
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper button {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: #4f46e5;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Remember Me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+
+/* Error message */
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff4d4f;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Login Button */
+.advanced-login-form button[type='submit'] {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(to right, #4f46e5, #6d28d9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.advanced-login-form button[type='submit']:hover {
+  background: linear-gradient(to right, #4338ca, #7c3aed);
+}
+
+.advanced-login-form button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .advanced-login-form {
+    padding: 1.5rem;
+  }
+
+  .password-wrapper button {
+    top: 6px;
+    font-size: 0.8rem;
+  }
+}
+
+
