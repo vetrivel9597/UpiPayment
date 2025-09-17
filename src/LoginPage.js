@@ -103,6 +103,8 @@ const AdvancedLoginPage = () => {
                 if (response.status) {
                     toast.success("Login Success")
                     resetForm()
+                    localStorage.setItem("email", response.email)
+                    localStorage.setItem("token", response.token)
                     navigate("/DeshBoard")
                 } else {
                     toast.error(response.ErrorMessage)

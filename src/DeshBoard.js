@@ -48,6 +48,10 @@ function DeshBoard() {
     Navigate('/Qrcode')
   }
 
+    const handleRazor = () => {
+    Navigate('/RazorPay')
+  }
+
   return (
     <div style={containerStyle}>
 
@@ -72,6 +76,21 @@ function DeshBoard() {
       >
         <span
         >📲</span> UPI Payment
+     
+     
+      </button>
+
+
+       <button
+      onClick={handleRazor}
+        style={hovered === 'upi' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
+        onMouseEnter={() => setHovered('upi')}
+       onMouseLeave={() => setHovered(null)
+
+        }
+      >
+        <span
+        >📲</span> RazorPayUPI Payment
      
      
       </button>
