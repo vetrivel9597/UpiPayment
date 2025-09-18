@@ -8,7 +8,7 @@ const buttonStyle = {
   fontSize: '1.1rem',
   fontWeight: '600',
   color: 'white',
-  background: 'rgba(79, 70, 229, 0.8)', 
+  background: 'rgba(79, 70, 229, 0.8)',
   border: 'none',
   borderRadius: '12px',
   boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
@@ -23,7 +23,7 @@ const buttonStyle = {
 };
 
 const buttonHover = {
-  background: 'rgba(99, 102, 241, 0.9)', 
+  background: 'rgba(99, 102, 241, 0.9)',
   boxShadow: '0 12px 40px 0 rgba(99, 102, 241, 0.6)',
   transform: 'scale(1.05)',
 };
@@ -48,7 +48,7 @@ function DeshBoard() {
     Navigate('/Qrcode')
   }
 
-    const handleRazor = () => {
+  const handleRazor = () => {
     Navigate('/RazorPay')
   }
 
@@ -61,27 +61,27 @@ function DeshBoard() {
         onMouseEnter={() => setHovered('transfer')}
         onMouseLeave={() => setHovered(null)}
       >
-      
+
         <span>🏦</span> Bank to Bank Transfer
       </button>
-     
-     
+
+
       <button
-      onClick={ handleClick}
+        onClick={handleClick}
         style={hovered === 'upi' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
         onMouseEnter={() => setHovered('upi')}
-       onMouseLeave={() => setHovered(null)
+        onMouseLeave={() => setHovered(null)
 
         }
       >
         <span
         >📲</span> UPI Payment
-     
-     
+
+
       </button>
 
 
-       <button
+      {/* <button
       onClick={handleRazor}
         style={hovered === 'upi' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
         onMouseEnter={() => setHovered('upi')}
@@ -93,7 +93,9 @@ function DeshBoard() {
         >📲</span> RazorPayUPI Payment
      
      
-      </button>
+      </button> */}
+
+
     </div>
   );
 }
