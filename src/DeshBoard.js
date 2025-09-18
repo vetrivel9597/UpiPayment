@@ -61,7 +61,6 @@ function DeshBoard() {
         onMouseEnter={() => setHovered('transfer')}
         onMouseLeave={() => setHovered(null)}
       >
-
         <span>🏦</span> Bank to Bank Transfer
       </button>
 
@@ -71,30 +70,27 @@ function DeshBoard() {
         style={hovered === 'upi' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
         onMouseEnter={() => setHovered('upi')}
         onMouseLeave={() => setHovered(null)
-
         }
       >
         <span
         >📲</span> UPI Payment
 
-
       </button>
 
 
-      {/* <button
-      onClick={handleRazor}
+      <button
+        onClick={handleRazor}
         style={hovered === 'upi' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
         onMouseEnter={() => setHovered('upi')}
-       onMouseLeave={() => setHovered(null)
+        onMouseLeave={() => setHovered(null)
 
         }
       >
         <span
         >📲</span> RazorPayUPI Payment
-     
-     
-      </button> */}
 
+
+      </button>
 
     </div>
   );
