@@ -52,7 +52,7 @@ function DeshBoard() {
     Navigate('/RazorPay')
   }
 
-  const handleButtonClick=()=>{
+  const handleButtonClick = () => {
     Navigate("/AccountDetails")
   }
 
@@ -60,10 +60,10 @@ function DeshBoard() {
     <div style={containerStyle}>
 
 
-      <button 
+      <button
         style={hovered === 'transfer' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
         onMouseEnter={() => setHovered('transfer')}
-        onMouseLeave={() => setHovered(null)} 
+        onMouseLeave={() => setHovered(null)}
         onClick={handleButtonClick}
       >
         <span>🏦</span> Bank to Bank Transfer
@@ -82,20 +82,19 @@ function DeshBoard() {
 
       </button>
 
-
+      {/* 
       <button
         onClick={handleRazor}
         style={hovered === 'upi' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
         onMouseEnter={() => setHovered('upi')}
         onMouseLeave={() => setHovered(null)
-
         }
       >
         <span
         >📲</span> RazorPayUPI Payment
 
 
-      </button>
+      </button> */}
 
     </div>
   );

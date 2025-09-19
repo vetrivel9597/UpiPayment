@@ -15,7 +15,7 @@ function AccountDetails() {
   useEffect(() => {
     const fetchAccounts = async () => {
       try {
-        const response = await fetch("http://localhost:8081/api/transactions/getAccountData");
+        const response = await fetch("http://localhost:5000/api/transactions/getAccountData");
         const json = await response.json();
         setAccounts(json.data);
       } catch (error) {
@@ -33,7 +33,7 @@ function AccountDetails() {
   const handleViewBalance = async (accountNumber) => {
     try {
       const response = await fetch(
-        `http://localhost:8081/api/transactions/balance/${accountNumber}`
+        `http://localhost:5000/api/transactions/balance/${accountNumber}`
       );
       const json = await response.json();
       if (json.status) {
@@ -50,7 +50,7 @@ function AccountDetails() {
   const handleTransactionHistory = async (accountNumber) => {
     try {
       const response = await fetch(
-        `http://localhost:8081/api/transactions/history/${accountNumber}`
+        `http://localhost:5000/api/transactions/history/${accountNumber}`
       );
       const json = await response.json();
       if (json.status) {
