@@ -35,7 +35,6 @@ function QrcodeGentrate() {
     };
 
     useEffect(() => {
-
         fetchPayments();
         if (localStorage.getItem("count") >= 1) {
             clearInterval(timer)
@@ -61,18 +60,15 @@ function QrcodeGentrate() {
                 }
             })
         }, 1000);
-
     }
 
     const handlePayNow = () => {
         window.location.href = upiLink;
     };
 
-
-
     return (
         <div style={{
-            backgroundColor:"#667eea",
+            backgroundColor: "#667eea",
             minHeight: "100vh",
             width: "100%",
             display: "flex",
@@ -101,7 +97,7 @@ function QrcodeGentrate() {
                             setUpiId(e.target.value)
                         }
                     />
-                    <button type="submit" style={{backgroundColor:"#4f46e5"}} >Generate QR</button>
+                    <button type="submit" style={{ backgroundColor: "#4f46e5" }} >Generate QR</button>
                 </form>
 
                 {

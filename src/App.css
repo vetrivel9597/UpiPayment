@@ -303,64 +303,64 @@ ul li:hover {
 
 
 /* RazorPay.css */
+body {
+  background: linear-gradient(to right, #4338ca, #7c3aed);
+}
 
 .payment-container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 40px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    transition: transform 0.3s ease;
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .payment-container:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .payment-container h2 {
-    margin-bottom: 25px;
-    color: #333;
-    font-size: 24px;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 24px;
 }
 
 .payment-container input[type="number"] {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .payment-container input[type="number"]:focus {
-    border-color: #3399cc;
+  border-color: #3399cc;
 }
 
 .payment-container button {
-    width: 100%;
-    padding: 12px;
-    background-color: #3399cc;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  padding: 12px;
+  background-color: #3399cc;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .payment-container button:hover {
-    background-color: #2d89b9;
-    transform: scale(1.03);
+  background-color: #2d89b9;
+  transform: scale(1.03);
 }
 
 .payment-container button:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
-
-
-
