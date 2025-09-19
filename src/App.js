@@ -6,6 +6,12 @@ import Login from './LoginPage'
 import { ToastContainer } from 'react-toastify';
 import Protected from './Protected'
 import RazorPay from './RazorPay'
+import AccountDetails from './B2B/AccountDetails'
+import CreateAccount from './B2B/CreateAccount'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import InternalPayment from './B2B/InternalPayment'
+import CreateInternalPayments from './B2B/CreateInternalPayments'
+import ConfirmInternalPayment from './B2B/ConfirmInternalPayment'
 
 
 function App() {
@@ -16,7 +22,7 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/DeshBoard' element={
             <Protected>
-            <DeshBoard/>
+              <DeshBoard />
             </Protected>
           } />
           <Route path='/Qrcode' element={
@@ -25,11 +31,36 @@ function App() {
             </Protected>
           } />
 
-           <Route path='/RazorPay' element={
+          <Route path='/RazorPay' element={
             <Protected>
-            <RazorPay/>
+              <RazorPay />
             </Protected>
-          } /> 
+          } />
+          <Route path='/AccountDetails' element={
+            <Protected>
+              <AccountDetails />
+            </Protected>
+          } />
+          <Route path='/createAccount' element={
+            <Protected>
+              <CreateAccount />
+            </Protected>
+          } />
+          <Route path='/internal-payment' element={
+            <Protected>
+              <InternalPayment />
+            </Protected>
+          } />
+          <Route path='/createInternal-payment' element={
+            <Protected>
+              <CreateInternalPayments />
+            </Protected>
+          } />
+           <Route path='/confirmInternal-payment' element={
+            <Protected>
+              <ConfirmInternalPayment />
+            </Protected>
+          } />
         </Routes>
       </BrowserRouter>
 

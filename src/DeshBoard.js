@@ -52,14 +52,19 @@ function DeshBoard() {
     Navigate('/RazorPay')
   }
 
+  const handleButtonClick=()=>{
+    Navigate("/AccountDetails")
+  }
+
   return (
     <div style={containerStyle}>
 
 
-      <button
+      <button 
         style={hovered === 'transfer' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
         onMouseEnter={() => setHovered('transfer')}
-        onMouseLeave={() => setHovered(null)}
+        onMouseLeave={() => setHovered(null)} 
+        onClick={handleButtonClick}
       >
         <span>🏦</span> Bank to Bank Transfer
       </button>
