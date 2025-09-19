@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+function CreateAccount() {
+
+  const navigate = useNavigate()
+  const [form, setForm] = useState({
+    accountName: "",
+    currencyCode: "",
+    poolId: ""
+  });
+  const [response, setResponse] = useState(null);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post("http://localhost:8081/api/transactions/createAccount", form);
+      setResponse(res.data);
+      navigate("/AccountDetails")
+    } catch (err) {
+      setResponse(err.response?.data || { message: "Request failed" });
+    }
+  };
+
+  return (
+    <div className="p-6">
+      <h1 className="text-xl font-bold mb-4">Create Account</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <input
+          type="text"
+          name="accountName"
+          placeholder="Account Name"
+          value={form.accountName}
+          onChange={handleChange}
+          className="border p-2"
+        />
+        <input
+          type="text"
+          name="currencyCode"
+          placeholder="Currency Code (e.g. EUR)"
+          value={form.currencyCode}
+          onChange={handleChange}
+          className="border p-2"
+        />
+        <input
+          type="text"
+          name="poolId"
+          placeholder="Pool ID"
+          value={form.poolId}
+          onChange={handleChange}
+          className="border p-2"
+        />
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2">
+          Create Account
+        </button>
+      </form>
+
+      {response && (
+        <pre className="mt-4 bg-gray-100 p-3 rounded">
+          {JSON.stringify(response, null, 2)}
+        </pre>
+      )}
+    </div>
+  );
+}
+
+export default CreateAccount;
