@@ -20,7 +20,7 @@ function CreateAccount() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8081/api/transactions/createAccount", form);
+      const res = await axios.post("http://localhost:5000/api/transactions/createAccount", form);
       setResponse(res.data);
       navigate("/AccountDetails")
     } catch (err) {

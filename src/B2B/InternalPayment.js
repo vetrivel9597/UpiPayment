@@ -9,7 +9,7 @@ function InternalPayment() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await fetch("http://localhost:8081/api/transactions/getInternalPayments");
+        const response = await fetch("http://localhost:5000/api/transactions/getInternalPayments");
         const json = await response.json();
         if (json.status) {
           setPayments(json.data);
