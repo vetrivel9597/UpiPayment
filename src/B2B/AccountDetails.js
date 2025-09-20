@@ -15,7 +15,7 @@ function AccountDetails() {
   useEffect(() => {
     const fetchAccounts = async () => {
       try {
-        const response = await fetch("http://localhost:8081/api/transactions/getAccountData");
+        const response = await fetch("http://localhost:5000/api/transactions/getAccountData");
         const json = await response.json();
         setAccounts(json.data);
       } catch (error) {
@@ -33,7 +33,7 @@ function AccountDetails() {
   const handleViewBalance = async (accountNumber) => {
     try {
       const response = await fetch(
-        `http://localhost:8081/api/transactions/balance/${accountNumber}`
+        `http://localhost:5000/api/transactions/balance/${accountNumber}`
       );
       const json = await response.json();
       if (json.status) {
@@ -50,7 +50,7 @@ function AccountDetails() {
   const handleTransactionHistory = async (accountNumber) => {
     try {
       const response = await fetch(
-        `http://localhost:8081/api/transactions/history/${accountNumber}`
+        `http://localhost:5000/api/transactions/history/${accountNumber}`
       );
       const json = await response.json();
       if (json.status) {
@@ -100,14 +100,18 @@ function AccountDetails() {
     }
   ];
 
+  const handleDashbordClick = () => {
+    navigate("/DeshBoard")
+  }
+
   return (
     <div className="p-4">
       <h2 className="mb-3">Account List</h2>
 
-      <Button variant="success" className="mb-3" onClick={handleCreateAccount}>
+      <Button variant="success" className="mb-3 shadow-lg" onClick={handleCreateAccount}>
         Create Account
       </Button>
-      <Button variant="primary" className="mb-3 ms-2" onClick={handleInternalPayment}>
+      <Button variant="primary" className="mb-3 ms-2 " onClick={handleInternalPayment}>
         Internal Payment
       </Button>
 
@@ -119,12 +123,14 @@ function AccountDetails() {
         striped
       />
 
+      <Button variant="secondary" onClick={handleDashbordClick} className="mt-2">Go To DashBoard</Button>
+
       {/* Balance Modal */}
       <div className={`modal fade ${showPopup ? "show d-block" : ""}`} tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Account Balance</h5>
+              <h5 className="modal-title ">Account Balance</h5>
               <button type="button" className="btn-close" onClick={() => setShowPopup(false)}></button>
             </div>
             <div className="modal-body">
@@ -238,7 +244,7 @@ export default AccountDetails;
 //   useEffect(() => {
 //     const fetchAccounts = async () => {
 //       try {
-//         const response = await fetch("http://localhost:8081/api/transactions/getAccountData");
+//         const response = await fetch("http://localhost:5000/api/transactions/getAccountData");
 //         const json = await response.json();
 //         setAccounts(json.data);
 //         console.log('response', response)
@@ -256,7 +262,7 @@ export default AccountDetails;
 
 //   const handleViewBalance = async (accountNumber) => {
 //     try {
-//       const response = await fetch(`http://localhost:8081/api/transactions/balance/${accountNumber}`);
+//       const response = await fetch(`http://localhost:5000/api/transactions/balance/${accountNumber}`);
 //       const json = await response.json();
 //       if (json.status) {
 //         setSelectedBalance(json.data);

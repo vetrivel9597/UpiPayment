@@ -9,7 +9,7 @@ function InternalPayment() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await fetch("http://localhost:8081/api/transactions/getInternalPayments");
+        const response = await fetch("http://localhost:5000/api/transactions/getInternalPayments");
         const json = await response.json();
         if (json.status) {
           setPayments(json.data);
@@ -66,9 +66,11 @@ function InternalPayment() {
   }
   return (
     <div className="p-4">
-      <h2 className="mb-3">Internal Payments</h2>
+      <h2 className="mb-3 ">Internal Payments</h2>
       <Button onClick={handleGetAccountData}>View Account</Button>
-      <Button onClick={handelCreatePayments} className="ms-2">Create internalPayment</Button>
+      <Button variant="danger" onClick={handelCreatePayments} className="ms-2">Create InternalPayment</Button>
+      <br />
+      <br />
       <DataTable
         columns={columns}
         data={payments}

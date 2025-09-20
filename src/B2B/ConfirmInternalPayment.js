@@ -11,7 +11,7 @@ function ConfirmInternalPayment() {
 
     try {
       const response = await axios.put(
-        "http://localhost:8081/api/transactions/confirm-internalPayments",
+        "http://localhost:5000/api/transactions/confirm-internalPayments",
         { paymentId },
         {
           headers: {

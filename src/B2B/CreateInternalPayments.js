@@ -22,7 +22,7 @@ function CreateInternalPayments() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8081/api/transactions/internal-payments",
+        "http://localhost:5000/api/transactions/internal-payments",
         formData,
         {
           headers: {

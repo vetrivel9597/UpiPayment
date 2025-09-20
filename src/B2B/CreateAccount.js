@@ -20,7 +20,7 @@ function CreateAccount() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8081/api/transactions/createAccount", form);
+      const res = await axios.post("http://localhost:5000/api/transactions/createAccount", form);
       setResponse(res.data);
       navigate("/AccountDetails")
     } catch (err) {
@@ -56,16 +56,12 @@ function CreateAccount() {
           onChange={handleChange}
           className="border p-2"
         />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2">
+        <button type="submit" className="bg-blue-500 text-red px-4 py-2">
           Create Account
         </button>
       </form>
 
-      {response && (
-        <pre className="mt-4 bg-gray-100 p-3 rounded">
-          {JSON.stringify(response, null, 2)}
-        </pre>
-      )}
+
     </div>
   );
 }
