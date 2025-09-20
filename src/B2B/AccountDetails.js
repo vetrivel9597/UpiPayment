@@ -125,7 +125,6 @@ function AccountDetails() {
 
       <Button variant="secondary" onClick={handleDashbordClick} className="mt-2">Go To DashBoard</Button>
 
-      {/* Balance Modal */}
       <div className={`modal fade ${showPopup ? "show d-block" : ""}`} tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
@@ -140,7 +139,7 @@ function AccountDetails() {
                     <tr>
                       <th>Available Balance</th>
                       <td>
-                        {selectedBalance.availableBalance.amount}{" "}
+                        {selectedBalance.availableBalance.amount}{""}
                         {selectedBalance.availableBalance.currencyCode}
                       </td>
                     </tr>
