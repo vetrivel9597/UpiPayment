@@ -8,7 +8,7 @@ function CreateAccount() {
   const [form, setForm] = useState({
     accountName: "",
     currencyCode: "",
-    poolId: ""
+    poolId: 3
   });
   const [response, setResponse] = useState(null);
 
@@ -20,7 +20,7 @@ function CreateAccount() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/transactions/createAccount", form);
+      const res = await axios.post("http://localhost:5000/api/transactions/createAccount", form) ;
       setResponse(res.data);
       navigate("/AccountDetails")
     } catch (err) {
@@ -48,16 +48,18 @@ function CreateAccount() {
           onChange={handleChange}
           className="border p-2"
         />
-        <input
+
+        {/* <input
           type="text"
           name="poolId"
           placeholder="Pool ID"
           value={form.poolId}
           onChange={handleChange}
           className="border p-2"
-        />
+        /> */}
+
         <button type="submit" className="bg-blue-500 text-red px-4 py-2">
-          Create Account
+        Create Account
         </button>
       </form>
 
