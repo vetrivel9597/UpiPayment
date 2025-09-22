@@ -23,7 +23,6 @@ function RazorPay() {
             alert("Enter amount");
             return;
         }
-
         const scriptLoaded = await loadRazorpayScript();
         if (!scriptLoaded) {
             alert("Failed to load Razorpay SDK. Please check your internet.");
@@ -60,7 +59,7 @@ function RazorPay() {
                         }
                     } catch (err) {
                         console.error("Verification error:", err);
-                        alert("Error during verification");
+                        //alert("Error during verification");
                     }
                 },
                 prefill: {
@@ -77,7 +76,15 @@ function RazorPay() {
                             show_default_blocks: true
                         }
                     }
-                }
+                },
+
+                // method: {
+                //     upi: true,
+                //     card: false,
+                //     netbanking: false,
+                //     wallet: false
+                // },
+
             };
 
 
@@ -91,19 +98,6 @@ function RazorPay() {
     };
 
     return (
-
-
-        // <div style={{ padding: 20 }}>
-        //     <h2>UPI Payment</h2>
-        //     <input
-        //         type="number"
-        //         placeholder="Enter amount"
-        //         value={amount}
-        //         onChange={(e) => setAmount(e.target.value)}
-        //     />
-        //     <button onClick={handlePayment}>Pay with UPI</button>
-        // </div>
-
 
 
         <div className="payment-container">
