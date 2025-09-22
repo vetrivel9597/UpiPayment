@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import {Button } from "react-bootstrap"
 function CreateInternalPayments() {
   const [formData, setFormData] = useState({
     amount: '',
@@ -40,8 +40,16 @@ function CreateInternalPayments() {
     }
   };
 
+  const handleBackButtonClick = () => {
+    navigate("/AccountDetails")
+
+  }
   return (
     <div className="container mt-4">
+
+      <div className="d-flex justify-content-end">
+        <Button variant="secondary" onClick={handleBackButtonClick}>Go To Account Details</Button>
+      </div>
       <h2>Create Internal Payment</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

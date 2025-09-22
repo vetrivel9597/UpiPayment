@@ -87,9 +87,11 @@ function InternalPayment() {
   const handleGetAccountData = () => {
     navigate("/AccountDetails")
   }
+
   return (
     <div className="p-4">
       <h2 className="mb-3 ">Internal Payments</h2>
+
       <Button onClick={handleGetAccountData}>View Account</Button>
       <Button variant="danger" onClick={handelCreatePayments} className="ms-2">Create InternalPayment</Button>
       <br />
