@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
-import { Modal, Button, Table } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 function InternalPayment() {
   const [payments, setPayments] = useState([]);
@@ -64,9 +64,11 @@ function InternalPayment() {
   const handleGetAccountData = () => {
     navigate("/AccountDetails")
   }
+
   return (
     <div className="p-4">
       <h2 className="mb-3 ">Internal Payments</h2>
+
       <Button onClick={handleGetAccountData}>View Account</Button>
       <Button variant="danger" onClick={handelCreatePayments} className="ms-2">Create InternalPayment</Button>
       <br />

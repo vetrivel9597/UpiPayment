@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { Button } from "react-bootstrap"
 function CreateAccount() {
 
   const navigate = useNavigate()
@@ -27,9 +27,15 @@ function CreateAccount() {
       setResponse(err.response?.data || { message: "Request failed" });
     }
   };
-
+  const handleBackButtonClick = () => {
+    navigate("/AccountDetails")
+  }
   return (
     <div className="p-6">
+      <br />
+      <div className="d-flex justify-content-end">
+        <Button variant="secondary" onClick={handleBackButtonClick}>Go To Account Details</Button>
+      </div>
       <h1 className="text-xl font-bold mb-4">Create Account</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input
