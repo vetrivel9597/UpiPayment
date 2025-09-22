@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -6,27 +6,42 @@ function ConfirmInternalPayment() {
   const [paymentId, setPaymentId] = useState("");
   const [result, setResult] = useState(null);
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const LocationId = (window.location.href).split("=")[1]
+    setPaymentId(LocationId)
+    
+  }, [])
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.put(
-        "http://localhost:5000/api/transactions/confirm-internalPayments",
-        { paymentId },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    if (paymentId) {
+      console.log('paymentId:', paymentId)
+      try {
+        const response = await axios.put(
+          "http://localhost:5000/api/transactions/confirm-internalPayments",
+          { paymentId },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
-      console.log("✅ Confirm Success:", response.data);
-      setResult(response.data);
-      navigate("/internal-payment")
-      alert("Payment confirmed successfully!");
-    } catch (error) {
-      console.error("❌ Confirm Error:", error.response?.data || error.message);
-      alert("Payment confirmation failed!");
+        console.log("✅ Confirm Success:", response.data);
+        setResult(response.data);
+        navigate("/internal-payment")
+        alert("Payment confirmed successfully!");
+      } catch (error) {
+        console.log('error', error)
+        console.error("❌ Confirm Error:", error.response?.data || error.message);
+        alert("Payment confirmation failed!");
+      }
+    } else {
+      console.log('paymentId:', paymentId)
+      console.log('paymentId does not store')
     }
   };
 

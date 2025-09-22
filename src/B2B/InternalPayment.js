@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
 import { Modal, Button, Table } from "react-bootstrap";
+import axios from "axios"
+import PopupModal from "../B2B/PopupModal"
 
 function InternalPayment() {
   const [payments, setPayments] = useState([]);
   const navigate = useNavigate()
+  const [PopUp, setPopUp] = useState(false)
+  
   useEffect(() => {
     const fetchPayments = async () => {
       try {
@@ -22,8 +26,27 @@ function InternalPayment() {
     fetchPayments();
   }, []);
 
-  const handleConformPayment = (paymentId) => {
-    navigate(`/confirmInternal-payment?id=${paymentId}`);
+  const handleConformPayment = async (paymentId) => {
+    console.log('paymentId :', paymentId)
+
+    const response = await axios.put(
+      "http://localhost:5000/api/transactions/ConfirmStatus",
+      { paymentId },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log('response :', response.data.StatusCheck)
+
+    if (response.data.StatusCheck === "SUCCESS") {
+      setPopUp(true)
+    } else {
+      navigate(`/confirmInternal-payment?id=${paymentId}`);
+    }
+
+
   };
 
 
@@ -78,6 +101,14 @@ function InternalPayment() {
         highlightOnHover
         striped
       />
+
+      <PopupModal
+        show={PopUp}
+        onClose={() => setPopUp(false)}
+        title="Payment Status"
+        message="Payment Already Success"
+      />
+
     </div>
   );
 }

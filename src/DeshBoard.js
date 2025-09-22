@@ -82,7 +82,7 @@ function DeshBoard() {
 
       </button>
 
-      {/* 
+      
       <button
         onClick={handleRazor}
         style={hovered === 'upi' ? { ...buttonStyle, ...buttonHover } : buttonStyle}
@@ -94,7 +94,7 @@ function DeshBoard() {
         >📲</span> RazorPayUPI Payment
 
 
-      </button> */}
+      </button>
 
     </div>
   );
