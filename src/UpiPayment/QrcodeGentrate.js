@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
-import config from "./Config/URL"
+import "../App.css";
+import config from "../Config/URL"
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";

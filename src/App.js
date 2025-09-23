@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Qrcode from './QrcodeGentrate'
-import DeshBoard from './DeshBoard'
-import Login from './LoginPage'
+import Qrcode from './UpiPayment/QrcodeGentrate'
+import DeshBoard from './Pages/DeshBoard'
+import Login from './Pages/LoginPage'
 import { ToastContainer } from 'react-toastify';
-import Protected from './Protected'
-import RazorPay from './RazorPay'
+import Protected from "./Auth/Protected"
+import RazorPay from './UpiPayment/RazorPay'
 import AccountDetails from './B2B/AccountDetails'
 import CreateAccount from './B2B/CreateAccount'
 import 'bootstrap/dist/css/bootstrap.min.css';
