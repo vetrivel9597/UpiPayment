@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import "./App.css";
+import "../App.css";
 import { useFormik } from 'formik';
 import * as yup from "yup";
 import axios from "axios"
-import config from "./Config/URL"
-import API from "./Config/Methods"
+import config from "../Config/URL"
+import API from "../Config/Methods"
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 

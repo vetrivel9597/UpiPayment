@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "./App.css";
+import "../App.css";
 
 function RazorPay() {
     const [amount, setAmount] = useState("");
-
     const loadRazorpayScript = () => {
         return new Promise((resolve) => {
             if (window.Razorpay) {
