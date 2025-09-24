@@ -1,17 +1,17 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Qrcode from './UpiPayment/QrcodeGentrate'
+import Qrcode from './Pages/UpiPayment/QrcodeGentrate'
 import DeshBoard from './Pages/DeshBoard'
 import Login from './Pages/LoginPage'
 import { ToastContainer } from 'react-toastify';
 import Protected from "./Auth/Protected"
-import RazorPay from './UpiPayment/RazorPay'
-import AccountDetails from './B2B/AccountDetails'
-import CreateAccount from './B2B/CreateAccount'
+import RazorPay from './Pages/UpiPayment/RazorPay'
+import AccountDetails from './Pages/B2B/AccountDetails'
+import CreateAccount from './Pages/B2B/CreateAccount'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import InternalPayment from './B2B/InternalPayment'
-import CreateInternalPayments from './B2B/CreateInternalPayments'
-import ConfirmInternalPayment from './B2B/ConfirmInternalPayment'
+import InternalPayment from './Pages/B2B/InternalPayment'
+import CreateInternalPayments from './Pages/B2B/CreateInternalPayments'
+import ConfirmInternalPayment from './Pages/B2B/ConfirmInternalPayment'
 
 
 function App() {
